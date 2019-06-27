@@ -98,7 +98,7 @@ console.log(totalCar(['this', 5, 'is', 7, 'a', 'longer', 10, 'array']));
 // Output: {'a': 3, 'e': 1, 'i': 2, 'o': 1, 'u': 0}
 // ```
 const vowelCount = arr => {
-    let vowels = arr.join("").split("").filter(x => x.match(/[aeiou]/gi)).sort();
+    let vowels = arr.join("").split("").filter(x => x.match(/[aeiou]/gi));
     let obj = { a: 0, e: 0, i: 0, o: 0, u: 0 }
     vowels.forEach(x => {
         obj[x] = (obj[x] || 0) + 1;
@@ -204,8 +204,9 @@ console.log(squareRemEven([10, 11]));
 // ```
 const crazy = arr => {
 
-    let filteredReverse = arr.filter(x => ![...x].includes("l"))
-        .map(x => [...x].reverse().join(""));
+    let filteredReverse =
+        arr.filter(x => ![...x].includes("l"))
+            .map(x => [...x].reverse().join(""));
 
     let cased = filteredReverse.map(x =>
         x.length % 2 === 0 ? x[0].toUpperCase() + x.slice(1) :
@@ -229,10 +230,31 @@ console.log(crazy(['bird', 'cat', 'snake', 'cat', 'dog', 'frog', 'llama']));
 // Input: ['this', 'is', 'a', 'test', 'test']
 // Output: 1
 // ```
-const outOfNames = arr => [...new Set(arr)]
-    .map(x => x.length)
-    .filter(x => x % 2 !== 0)
-    .reduce((acc, val) => acc * val);
+const outOfNames = arr =>
+    [...new Set(arr)]
+        .map(x => x.length)
+        .filter(x => x % 2 !== 0)
+        .reduce((acc, val) => acc * val);
 
 
 console.log(outOfNames(['bird', 'cat', 'snake', 'cat', 'dog', 'frog']));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
