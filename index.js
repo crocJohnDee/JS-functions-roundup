@@ -100,7 +100,7 @@ console.log(totalCar(['this', 5, 'is', 7, 'a', 'longer', 10, 'array']));
 const vowelCount = arr => {
     let vowels = arr.join("").split("").filter(x => x.match(/[aeiou]/gi));
     let obj = { a: 0, e: 0, i: 0, o: 0, u: 0 }
-    vowels.forEach(x => { obj[x] = (obj[x] || 0) + 1 });
+    vowels.forEach(x => obj[x] = (obj[x] || 0) + 1);
     return obj;
 }
 
